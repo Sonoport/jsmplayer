@@ -4,15 +4,6 @@
   "version": "1.0.0",
   "homepage": "http://sonoport.com",
   "author": "Sonport <tech@sonoport.com> (http://sonoport.com/)",
-  "files": [
-    "package.json",
-    "README.md",
-    "LICENSE",
-    "core/",
-    "models/",
-    "effects/"
-  ],
-  "main": "index.js",
   "contributors": [
     {
       "name": "Chinmay Pendharkar",
