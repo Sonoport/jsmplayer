@@ -17,9 +17,11 @@
   "devDependencies": {
     "browserify": "^9.0.8",
     "gulp": "^3.8.11",
+    "gulp-cached": "^1.0.4",
     "gulp-compass": "^2.0.4",
     "gulp-jsbeautifier": "0.0.8",
     "gulp-jshint": "^1.10.0",
+    "gulp-webserver": "^0.9.0",
     "jshint-stylish": "^1.0.1",
     "loglevel": "^1.2.0",
     "merge-stream": "^0.1.7"

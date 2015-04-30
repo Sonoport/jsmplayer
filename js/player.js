@@ -245,13 +245,13 @@
                     if ( typeof param.value === 'number' ) { // The rest of SPAudioParam
                         $playerParams
                             .append( "<div class='param-box'>" + labelnode + slider + outputVal + "</div>" );
-                        makeSlider( param);
+                        makeSlider( param );
                     } else if ( typeof param.value === 'boolean' ) {
                         $playerParams
                             .append( "<div class='param-box'>" + labelnode + switchBtn + outputVal + "</div>" );
                         makeSwitch( param );
-                    }else if (param instanceof Array){
-                        param.forEach(function(thisArrayParam){
+                    } else if ( param instanceof Array ) {
+                        param.forEach( function ( thisArrayParam ) {
 
                             paramName = thisArrayParam.name;
                             var labelnode = "<div class='param-name'><label class='label label-info param-name'>" + paramName + "</label></div>";
@@ -261,18 +261,18 @@
                             if ( typeof thisArrayParam.value === 'number' ) { // The rest of SPAudioParam
                                 $playerParams
                                     .append( "<div class='param-box'>" + labelnode + slider + outputVal + "</div>" );
-                                makeSlider(thisArrayParam );
+                                makeSlider( thisArrayParam );
                             } else if ( typeof thisArrayParam.value === 'boolean' ) {
                                 $playerParams
                                     .append( "<div class='param-box'>" + labelnode + switchBtn + outputVal + "</div>" );
-                                makeSwitch(thisArrayParam );
+                                makeSwitch( thisArrayParam );
                             }
-                        });
+                        } );
                     }
                 }
             }
 
-            function makeSlider( param) {
+            function makeSlider( param ) {
                 // Make sliders
                 $( "#" + param.name )
                     .tickslider( {
