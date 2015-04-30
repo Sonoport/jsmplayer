@@ -6,12 +6,15 @@ var webserver = require('gulp-webserver');
 var cached = require('gulp-cached');
 var jshint = require('gulp-jshint');
 var prettify = require('gulp-jsbeautifier');
+var browserify = require('browserify');
+var source = require('vinyl-source-stream');
 
 var paths = {
     files: {
-        playerJS: 'js/player.js',
+        playerJS: './js/player.js',
         playerSRC: '**/*.+(js|css)',
         playerCSS: '**/*.css',
+        bundle: './js/bundle.js'
     },
     dirs: {
         player: './',
@@ -48,7 +51,17 @@ gulp.task('jsbeautify', ['jshint'], function(){
     .pipe(gulp.dest('js/'));
 });
 
-gulp.task('playerbuild', ['jsbeautify','player:compass']);
+gulp.task('browserify', ['jsbeautify'], function(){
+    var b = browserify({
+       entries: paths.files.playerJS,
+     });
+
+    return b.bundle()
+       .pipe(source(paths.files.bundle))
+       .pipe(gulp.dest('.'));
+});
+
+gulp.task('playerbuild', ['browserify','player:compass']);
 
 gulp.task('player', ['playerbuild', 'watch:player'], function(){
     return gulp.src([paths.dirs.player])
