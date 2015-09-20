@@ -47,6 +47,6 @@
   },
   "license": "Apache-2.0",
   "dependencies": {
-    "soundmodels": "^2.5.8"
+    "soundmodels": "^2.5.9"
   }
 }
